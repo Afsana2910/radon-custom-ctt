@@ -14,6 +14,6 @@ requests
 six
 # Only needed for local execution
 docker
-opera
+opera[openstack]
 straight.plugin
 
