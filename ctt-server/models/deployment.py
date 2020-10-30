@@ -117,7 +117,7 @@ class Deployment(Base, AbstractModel):
         result_set = {}
 
         # Determine Docker network that is used on the current machine
-        docker_network = subprocess.getoutput("docker network ls | grep compose | head -n1 | awk '{print $2}'")
+        docker_network = subprocess.getoutput("docker network ls | grep bridge | head -n1 | awk '{print $2}'")
         if docker_network:
             current_app.logger.info(f'Automatically determined docker network {docker_network}')
         else:
